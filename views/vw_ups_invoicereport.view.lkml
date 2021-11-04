@@ -36,6 +36,15 @@ view: vw_ups_invoicereport {
     sql: ${TABLE}."CustomerName" ;;
   }
 
+  dimension: datasource {
+    label: "Date Source"
+    type: string
+    sql: case
+    when ${TABLE}."DataSource" = '1' or "DataSource" = '2' then 'Invoiced'
+    when ${TABLE}."DataSource" = '0' then 'Not Yet Invoiced'
+    END ;;
+  }
+
   dimension: description {
     type: string
     sql: ${TABLE}."Description" ;;
@@ -109,7 +118,30 @@ view: vw_ups_invoicereport {
     when ${TABLE}."PackageDimensions" IS NULL then 'N'
     when ${TABLE}."PackageDimensions" IS NOT NULL then 'Y'
     END ;;
+  }
 
+ dimension: receiveraddress {
+   label: "Receiver Address"
+    type: string
+    sql: ${TABLE}."ReceiverAddress" ;;
+ }
+
+ dimension: receiverpostal {
+   label: "Receiver Postal"
+    type: string
+    sql: ${TABLE}."ReceiverPostal" ;;
+ }
+
+ dimension: senderaddress {
+   label: "Sender Address"
+    type: string
+    sql: ${TABLE}."Sender Address" ;;
+ }
+
+  dimension: senderpostal {
+    label: "Sender Postal"
+    type: string
+    sql: ${TABLE}."Sender Postal" ;;
   }
 
   dimension: tracking_number {
@@ -143,6 +175,13 @@ view: vw_ups_invoicereport {
     sql: ${TABLE}."UPS_Amt" ;;
     value_format_name: gbp
   }
+
+  dimension: upsinvoicenumber {
+    label: "UPS Invoice No"
+    type: string
+    sql: ${TABLE}."UPSInvoiceNumber" ;;
+  }
+
 
 ################################################# MEASURES ##########################################
 
