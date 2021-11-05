@@ -1,7 +1,7 @@
 view: vw_ups_invoicereport {
 ##  sql_table_name: "CC"."VW_UPS_INVOICEREPORT"
   derived_table: {
-    persist_for: "10 minutes"
+    persist_for: "60 minutes"
     sql: select * from vw_ups_invoicereport ;;
   }
 
@@ -136,13 +136,13 @@ view: vw_ups_invoicereport {
  dimension: sender_address {
    label: "Sender Address"
     type: string
-    sql: ${TABLE}."Sender Address" ;;
+    sql: ${TABLE}."SenderAddress" ;;
  }
 
   dimension: sender_postal {
     label: "Sender Postal"
     type: string
-    sql: ${TABLE}."Sender Postal" ;;
+    sql: ${TABLE}."SenderPostal" ;;
   }
 
   dimension: tracking_number {
@@ -178,7 +178,7 @@ view: vw_ups_invoicereport {
   }
 
   dimension: upsinvoice_number {
-##    label: "UPS Invoice No"
+   label: "UPS Invoice No"
     type: number
     sql: ${TABLE}."UPSInvoiceNumber" ;;
   }
