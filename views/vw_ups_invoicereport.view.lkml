@@ -36,8 +36,8 @@ view: vw_ups_invoicereport {
     sql: ${TABLE}."CustomerName" ;;
   }
 
-  dimension: datasource {
-    label: "Date Source"
+  dimension: data_source {
+    label: "Data Source"
     type: string
     sql: case
     when ${TABLE}."DataSource" = '1' or "DataSource" = '2' then 'Invoiced'
@@ -121,25 +121,25 @@ view: vw_ups_invoicereport {
     END ;;
   }
 
- dimension: receiveraddress {
+ dimension: receiver_address {
    label: "Receiver Address"
     type: string
     sql: ${TABLE}."ReceiverAddress" ;;
  }
 
- dimension: receiverpostal {
+ dimension: receiver_postal {
    label: "Receiver Postal"
     type: string
     sql: ${TABLE}."ReceiverPostal" ;;
  }
 
- dimension: senderaddress {
+ dimension: sender_address {
    label: "Sender Address"
     type: string
     sql: ${TABLE}."Sender Address" ;;
  }
 
-  dimension: senderpostal {
+  dimension: sender_postal {
     label: "Sender Postal"
     type: string
     sql: ${TABLE}."Sender Postal" ;;
@@ -177,7 +177,7 @@ view: vw_ups_invoicereport {
     value_format_name: gbp
   }
 
-  dimension: upsinvoicenumber {
+  dimension: upsinvoice_number {
 ##    label: "UPS Invoice No"
     type: number
     sql: ${TABLE}."UPSInvoiceNumber" ;;
