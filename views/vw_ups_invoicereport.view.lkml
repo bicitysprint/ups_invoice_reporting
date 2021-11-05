@@ -1,7 +1,7 @@
 view: vw_ups_invoicereport {
 ##  sql_table_name: "CC"."VW_UPS_INVOICEREPORT"
   derived_table: {
-    persist_for: "24 hour"
+    persist_for: "10 minutes"
     sql: select * from vw_ups_invoicereport ;;
   }
 
@@ -42,6 +42,7 @@ view: vw_ups_invoicereport {
     sql: case
     when ${TABLE}."DataSource" = '1' or "DataSource" = '2' then 'Invoiced'
     when ${TABLE}."DataSource" = '0' then 'Not Yet Invoiced'
+    else NULL
     END ;;
   }
 
@@ -177,7 +178,7 @@ view: vw_ups_invoicereport {
   }
 
   dimension: upsinvoicenumber {
-    label: "UPS Invoice No"
+##    label: "UPS Invoice No"
     type: number
     sql: ${TABLE}."UPSInvoiceNumber" ;;
   }
