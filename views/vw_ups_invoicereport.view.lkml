@@ -178,7 +178,7 @@ view: vw_ups_invoicereport {
 
   dimension: upsinvoicenumber {
     label: "UPS Invoice No"
-    type: string
+    type: number
     sql: ${TABLE}."UPSInvoiceNumber" ;;
   }
 
