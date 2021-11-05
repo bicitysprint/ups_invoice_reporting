@@ -181,7 +181,7 @@ view: vw_ups_invoicereport {
    label: "UPS Invoice No"
     type: string
     sql: ${TABLE}."UPSInvoiceNumber" ;;
-    value_format_name: id
+    value_format: "0"
   }
 
 
