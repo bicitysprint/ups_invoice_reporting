@@ -47,12 +47,12 @@ view: vw_ups_invoicereport {
   }
 
   dimension: ds {
-    label: "DS"
+  ##  label: "DS"
     type: string
     sql: case
-          when ${TABLE}."DS" = '1' or "DS" = '2' then 'Invoiced'
-          when ${TABLE}."DS" = '0' then 'Not Yet Invoiced'
-          when ${TABLE}."DS" is null then "No Job Number"
+          when ${TABLE}."ds" = '1' or "DS" = '2' then 'Invoiced'
+          when ${TABLE}."ds" = '0' then 'Not Yet Invoiced'
+          when ${TABLE}."ds" is null then "No Job Number"
           else NULL
           END ;;
   }
