@@ -1,7 +1,7 @@
 view: vw_ups_invoicereport {
 ##  sql_table_name: "CC"."VW_UPS_INVOICEREPORT"
   derived_table: {
-    persist_for: "60 minutes"
+    persist_for: "30 minutes"
     sql: select * from vw_ups_invoicereport ;;
   }
 
