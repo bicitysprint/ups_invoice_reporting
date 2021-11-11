@@ -81,6 +81,13 @@ view: vw_ups_invoicereport {
     sql: ${TABLE}."InvoiceDate" ;;
   }
 
+  dimension: invoice_flag {
+    type: string
+    sql: ${TABLE}."InvoiceFlag" ;;
+  }
+
+
+
   dimension: job_no {
     type: string
     sql: ${TABLE}."JobNo" ;;
