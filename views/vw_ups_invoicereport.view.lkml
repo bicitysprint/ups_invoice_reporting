@@ -52,9 +52,7 @@ view: vw_ups_invoicereport {
     sql: case
           when ${TABLE}."Ds" = '1' or "Ds" = '2' then 'Invoiced'
           when ${TABLE}."Ds" = '0' then 'Not Yet Invoiced'
---          when ${TABLE}."Ds" = '0' then 'Not Yet Invoiced'
           when ${TABLE}."Ds" is null then "No Job Number"
---        else NULL
           END ;;
   }
 
