@@ -256,7 +256,7 @@ view: vw_ups_invoicereport {
     type: sum
     sql: ${ups_amt}-${ctagent_cost} ;;
     value_format: "0.00"
-  drill_fields: [tracking_number,ndishipmentreference,job_no,transaction_date,jobcode,ctagent_cost,customer_key,customer_name]
+  drill_fields: [tracking_number,ndishipmentreference,job_no,upsinvoice_number,transaction_date,jobcode,ups_amt,ctagent_cost,customer_key,customer_name]
   }
 
 
